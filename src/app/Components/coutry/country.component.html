@@ -1,0 +1,21 @@
+<div class="main-component-wrapper">
+	<form class="form-inline">
+		<div class="form-group">
+			<input
+				type="search"
+				class="form-control"
+				placeholder="Enter search"
+				#search>
+		</div>
+		<button 
+			class=""
+			(click)="doSearch(search.value)">Search
+		</button>
+
+		<div *ngIf="response">
+			<li *ngFor="let country of response.data; index as countryId">
+				<h3>{{country.name}}</h3>
+			</li>
+		</div>
+	</form>
+</div>
